@@ -45,6 +45,7 @@ namespace LineCounter
         {
             int lines = 0;
             int BlankLines = 0;
+            int Comments = 0;
             string line;
             foreach (string file in (string[])e.Argument)
             {
@@ -54,19 +55,24 @@ namespace LineCounter
                 while ((line = stream.ReadLine()) != null)
                 {
                     lines++;
-                    if (line == "")
+                    if(line == "")
                         BlankLines++;
+                    if ((fileType == "java" || fileType == "cs") && line.StartsWith("//"))
+                        Comments++;
+                    else if ((fileType == "html" || fileType == "xml") && line.StartsWith("<!--"))
+                        Comments++;
                 }
                 stream.Close();
-                backgroundWorker1.ReportProgress(0, new int[]{lines, BlankLines});
+                backgroundWorker1.ReportProgress(0, new int[] { lines, BlankLines, Comments });
             }
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             progressBar1.Value++;
-            label1.Text = "Number of lines: " + ((int[])e.UserState)[0];
-            label4.Text = "Number of blank lines: " + ((int[])e.UserState)[1];
+            label1.Text = "Total lines: " + ((int[])e.UserState)[0];
+            label4.Text = "Blank lines: " + ((int[])e.UserState)[1];
+            label5.Text = "Commented lines: " + ((int[])e.UserState)[2];
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -80,6 +86,10 @@ namespace LineCounter
                 fileType = "*";
             else if (ctrl.Text == "Text")
                 fileType = "txt";
+            else if (ctrl.Text == "HTML")
+                fileType = "html";
+            else if (ctrl.Text == "XML")
+                fileType = "xml";
             else if (ctrl.Text == "Other")
                 fileType = textBox2.Text;
         }

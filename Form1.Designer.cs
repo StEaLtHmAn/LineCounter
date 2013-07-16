@@ -44,6 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -109,11 +112,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(82, 154);
+            this.label1.Location = new System.Drawing.Point(93, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 29);
+            this.label1.Size = new System.Drawing.Size(143, 29);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Number of lines:";
+            this.label1.Text = "Total lines:";
             // 
             // backgroundWorker1
             // 
@@ -162,7 +165,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(286, 44);
+            this.radioButton5.Location = new System.Drawing.Point(400, 44);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(54, 17);
             this.radioButton5.TabIndex = 10;
@@ -172,7 +175,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(346, 43);
+            this.textBox2.Location = new System.Drawing.Point(460, 43);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(111, 20);
             this.textBox2.TabIndex = 11;
@@ -181,7 +184,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(343, 66);
+            this.label2.Location = new System.Drawing.Point(457, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 12;
@@ -200,17 +203,54 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 183);
+            this.label4.Location = new System.Drawing.Point(88, 180);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(275, 29);
+            this.label4.Size = new System.Drawing.Size(148, 29);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Number of blank lines:";
+            this.label4.Text = "Blank lines:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 209);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(224, 29);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Commented lines:";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(286, 44);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(55, 17);
+            this.radioButton6.TabIndex = 16;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "HTML";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(347, 44);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(47, 17);
+            this.radioButton7.TabIndex = 17;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "XML";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 331);
+            this.Controls.Add(this.radioButton7);
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -252,6 +292,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton7;
     }
 }
 
