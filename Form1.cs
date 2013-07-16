@@ -54,6 +54,7 @@ namespace LineCounter
             int Comments = 0;
             string line;
             bool comment = false;
+
             foreach (string file in (string[])e.Argument)
             {
                 if (backgroundWorker1.CancellationPending)
@@ -84,7 +85,7 @@ namespace LineCounter
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             progressBar1.Value++;
-            label9.Text = "Files: " + ((int[])e.UserState)[3];
+            label9.Text = "Files: " + progressBar1.Value+"/"+((int[])e.UserState)[3];
             label1.Text = "Total lines: " + ((int[])e.UserState)[0];
             label4.Text = "Blank lines: " + ((int[])e.UserState)[1];
             label5.Text = "Commented lines: " + ((int[])e.UserState)[2];
