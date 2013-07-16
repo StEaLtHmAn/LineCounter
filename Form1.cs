@@ -158,8 +158,20 @@ namespace LineCounter
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             fileType = textBox2.Text;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
             SingleComment = textBox3.Text;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
             MultiComment = textBox4.Text;
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
             EndMultiComment = textBox5.Text;
         }
     }

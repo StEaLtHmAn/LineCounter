@@ -48,12 +48,12 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -271,22 +271,23 @@
             this.panel1.Size = new System.Drawing.Size(194, 105);
             this.panel1.TabIndex = 18;
             // 
-            // label6
+            // textBox5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Single Line Comment:";
+            this.textBox5.Location = new System.Drawing.Point(118, 82);
+            this.textBox5.MaxLength = 10;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(73, 20);
+            this.textBox5.TabIndex = 18;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox3
+            // label8
             // 
-            this.textBox3.Location = new System.Drawing.Point(118, 29);
-            this.textBox3.MaxLength = 10;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(73, 20);
-            this.textBox3.TabIndex = 14;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "End Multi Comment:";
             // 
             // textBox4
             // 
@@ -295,6 +296,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(73, 20);
             this.textBox4.TabIndex = 16;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label7
             // 
@@ -305,22 +307,23 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Start Multi Comment:";
             // 
-            // textBox5
+            // textBox3
             // 
-            this.textBox5.Location = new System.Drawing.Point(118, 82);
-            this.textBox5.MaxLength = 10;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(73, 20);
-            this.textBox5.TabIndex = 18;
+            this.textBox3.Location = new System.Drawing.Point(118, 29);
+            this.textBox3.MaxLength = 10;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(73, 20);
+            this.textBox3.TabIndex = 14;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 84);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "End Multi Comment:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Single Line Comment:";
             // 
             // label9
             // 
