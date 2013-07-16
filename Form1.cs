@@ -44,19 +44,29 @@ namespace LineCounter
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             int lines = 0;
+            int BlankLines = 0;
+            string line;
             foreach (string file in (string[])e.Argument)
             {
                 if (backgroundWorker1.CancellationPending)
                     break;
-                lines += File.ReadLines(file).Count();
-                backgroundWorker1.ReportProgress(lines);
+                StreamReader stream = new StreamReader(file);
+                while ((line = stream.ReadLine()) != null)
+                {
+                    lines++;
+                    if (line == "")
+                        BlankLines++;
+                }
+                stream.Close();
+                backgroundWorker1.ReportProgress(0, new int[]{lines, BlankLines});
             }
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             progressBar1.Value++;
-            label1.Text = "Number of lines: " + e.ProgressPercentage;
+            label1.Text = "Number of lines: " + ((int[])e.UserState)[0];
+            label4.Text = "Number of blank lines: " + ((int[])e.UserState)[1];
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
